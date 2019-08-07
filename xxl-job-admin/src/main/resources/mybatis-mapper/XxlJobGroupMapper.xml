@@ -16,7 +16,7 @@
 		t.id,
 		t.app_name,
 		t.title,
-		t.`order`,
+		t."order",
 		t.address_type,
 		t.address_list
 	</sql>
@@ -35,17 +35,17 @@
 	</select>
 
 	<insert id="save" parameterType="com.xxl.job.admin.core.model.XxlJobGroup" useGeneratedKeys="true" keyProperty="id" >
-		INSERT INTO xxl_job_group ( `app_name`, `title`, `order`, `address_type`, `address_list`)
+		INSERT INTO xxl_job_group ( app_name, title, "order", address_type, address_list)
 		values ( #{appName}, #{title}, #{order}, #{addressType}, #{addressList});
 	</insert>
 
 	<update id="update" parameterType="com.xxl.job.admin.core.model.XxlJobGroup" >
 		UPDATE xxl_job_group
-		SET `app_name` = #{appName},
-			`title` = #{title},
-			`order` = #{order},
-			`address_type` = #{addressType},
-			`address_list` = #{addressList}
+		SET app_name = #{appName},
+			title = #{title},
+			"order" = #{order},
+			address_type = #{addressType},
+			address_list = #{addressList}
 		WHERE id = #{id}
 	</update>
 
